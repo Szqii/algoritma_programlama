@@ -72,8 +72,7 @@ int main() {
 				break;
 
 			case 6:
-				ekran_temizle();
-				//cikis();
+				break;
 
 
 
@@ -86,6 +85,14 @@ int main() {
 
 		}
 
+		if (islem_sec==6) {
+			printf("                                        ____________________                                               \n");
+		  printf("                                       |                    |                                              \n");
+		  printf("=====================================> | PROGRAMDAN ÇIKILDI | <============================================\n");
+		  printf("                                       |____________________|                                              \n");
+
+			break;
+		}
 	}
 
 

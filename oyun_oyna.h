@@ -29,10 +29,40 @@ for(sayac=0; sayac<5; sayac++) {
 
 
   if(cevap=='A') {
-    if(!strcmp(yeni_soru[z].correct_option,yeni_soru[z].option_a))
+    if(!strcmp(yeni_soru[z].correct_option,yeni_soru[z].option_a)) {
     printf("Doğru cevap! ");
     puan ++;
-
+  }
+  	else{
+  		printf("Yanlış Cevap");
+  	}
+  }
+  else if(cevap=='B') {
+    if(!strcmp(yeni_soru[z].correct_option,yeni_soru[z].option_b)) {
+    printf("Doğru cevap! ");
+    puan ++;
+  }
+  	else{
+  		printf("Yanlış Cevap");
+  	}
+  }
+  else if(cevap=='C') {
+    if(!strcmp(yeni_soru[z].correct_option,yeni_soru[z].option_c)) {
+    printf("Doğru cevap! ");
+    puan ++;
+  }
+  	else{
+  		printf("Yanlış Cevap");
+  	}
+  }
+  else if(cevap=='D') {
+    if(!strcmp(yeni_soru[z].correct_option,yeni_soru[z].option_d)) {
+    printf("Doğru cevap! ");
+    puan ++;
+  }
+  	else{
+  		printf("Yanlış Cevap");
+  	}
   }
 }
   getchar();

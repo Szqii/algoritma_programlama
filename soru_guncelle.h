@@ -5,8 +5,9 @@ void soru_guncelleme() {
   int secimSoru;
   int secimGuncelle;
 
-  printf("Güncellemeden çıkmak için 0'ı tuşlayın.\nKaçıncı soruyu güncellemek istersiniz? ");
+  printf("Kaçıncı soruyu güncellemek istersiniz? ");
   scanf("%d", &secimSoru);
+
 
   if(secimSoru>S){
 
