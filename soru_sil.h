@@ -1,22 +1,43 @@
+#define SARI "\x1b[1;33m"
+#define KRMZ "\x1b[1;31m"
+#define RESET "\x1b[0m"
+#define MAVI "\x1b[1;36m"
+
 void soru_sil()
 {
 	printf("                                        ____________________                                               \n");
 	printf("                                       |                    |                                              \n");
 	printf("=====================================> | SORU SILME EKRANI  | <============================================\n");
-	printf("                                       |____________________|                                                ");
+	printf("                                       |____________________|                                              \n");
 
 	int noSilinen = 0;
-	int sec;//Silinecek bilginin numarası.
+
+
+/*	if(S<2) {
+		printf(KRMZ"Soru bulunamadı.\n Ana menüye dönmek için bir tuşa basınız..."RESET);
+		getchar();
+		system("clear||cls");
+		system("clear||cls");
+		ana_menu();
+
+	} */
+
 
 
 		for(int i=1; i<S; i++) {
 
-    printf("\n%d. soru: %s",i, yeni_soru[i].soru); }
+    printf(MAVI"\n%d. soru:"RESET" %s",i, yeni_soru[i].soru); }
 
 
-	printf("\n----> Silmek istediginiz sorunun numarasini giriniz: ");
-	scanf("%d",&noSilinen);
+		printf(KRMZ"\n----> Silmek istediginiz sorunun numarasini giriniz: "RESET);
+		scanf("%d",&noSilinen);
 
+/*	if(noSilinen>S-1) {
+		printf(KRMZ"Soru bulunamadı.\n Ana menüye dönmek için bir tuşa basınız..."RESET);
+		getchar();
+		system("clear||cls");
+		system("clear||cls");
+	} */
 
 	noSilinen=noSilinen - 1;
 
@@ -31,7 +52,8 @@ void soru_sil()
 
 		S--;
 
-		printf("\n\n---> Soru silme başarılı!\nAna menüye dönmek için bir tuşa basınız.\n");
+		printf(KRMZ"\n\n---> Soru silme başarılı!\nAna menüye dönmek için bir tuşa basınız.\n"RESET);
+		getchar();
 		getchar();
 	}
 }

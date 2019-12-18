@@ -1,3 +1,8 @@
+#define SARI "\x1b[1;33m"
+#define KRMZ "\x1b[1;31m"
+#define RESET "\x1b[0m"
+#define MAVI "\x1b[1;36m"
+
 struct skor {
     char nick[50];
     int puan;
@@ -30,38 +35,38 @@ for(sayac=0; sayac<5; sayac++) {
 
   if(cevap=='A') {
     if(!strcmp(yeni_soru[z].correct_option,yeni_soru[z].option_a)) {
-    printf("Doğru cevap! ");
+    printf(MAVI"Doğru cevap! "RESET);
     puan ++;
   }
   	else{
-  		printf("Yanlış Cevap");
+  		printf(KRMZ"Yanlış Cevap"RESET);
   	}
   }
   else if(cevap=='B') {
     if(!strcmp(yeni_soru[z].correct_option,yeni_soru[z].option_b)) {
-    printf("Doğru cevap! ");
+    printf(MAVI"Doğru cevap! "RESET);
     puan ++;
   }
   	else{
-  		printf("Yanlış Cevap");
+  		printf(KRMZ"Yanlış Cevap"RESET);
   	}
   }
   else if(cevap=='C') {
     if(!strcmp(yeni_soru[z].correct_option,yeni_soru[z].option_c)) {
-    printf("Doğru cevap! ");
+    printf(MAVI"Doğru cevap! "RESET);
     puan ++;
   }
   	else{
-  		printf("Yanlış Cevap");
+  		printf(KRMZ"Yanlış Cevap"RESET);
   	}
   }
   else if(cevap=='D') {
     if(!strcmp(yeni_soru[z].correct_option,yeni_soru[z].option_d)) {
-    printf("Doğru cevap! ");
+    printf(MAVI"Doğru cevap! "RESET);
     puan ++;
   }
   	else{
-  		printf("Yanlış Cevap");
+  		printf(KRMZ"Geçersiz bir değer girdiniz. Cevap yanlış sayılacaktır."RESET);
   	}
   }
 }

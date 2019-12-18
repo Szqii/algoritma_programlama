@@ -8,12 +8,11 @@
 #include "soru_goster.h"
 #include "soru_guncelle.h"
 #include "oyun_oyna.h"
-// #include "cikis.h"
 #include "ekran_temizle.h"
-#define SARI "\x1b[33m"
-#define KRMZ "\x1b[31m"
+#define SARI "\x1b[1;33m"
+#define KRMZ "\x1b[1;31m"
 #define RESET "\x1b[0m"
-#define MAVI "\x1b[36m"
+#define MAVI "\x1b[1;36m"
 
 
 int counter = 1;
@@ -22,7 +21,7 @@ int counter = 1;
 int main() {
 
 
-
+	ekran_temizle();
 	ana_menu();
 
 
@@ -33,7 +32,7 @@ int main() {
 
 			case 1:
 				ekran_temizle();
-        		soru_ekle();
+      	soru_ekle();
 				ekran_temizle();
 				ana_menu();
 				break;
@@ -66,7 +65,6 @@ int main() {
 
 
 			case 5:
-			//	ekran_temizle();
 				ekran_temizle();
 				ana_menu();
 				break;
@@ -78,7 +76,9 @@ int main() {
 
 			default:
 
-				printf("Gecersiz deger giriniz. Ana menüye dönmek için bir tuşa basınız..\n");
+				printf(KRMZ"Gecersiz deger giriniz. Ana menüye dönmek için bir tuşa basınız..\n"RESET);
+				getchar();
+				ekran_temizle();
 				ana_menu();
 				break;
 

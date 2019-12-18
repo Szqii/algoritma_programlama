@@ -1,4 +1,8 @@
 #include <stdio.h>
+#define SARI "\x1b[1;33m"
+#define KRMZ "\x1b[1;31m"
+#define RESET "\x1b[0m"
+#define MAVI "\x1b[1;36m"
 
 struct question {
   char text[100];

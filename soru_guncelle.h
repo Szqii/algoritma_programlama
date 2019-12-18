@@ -1,4 +1,11 @@
 // GUNCELLENECEK SORUYU EKRANA YAZDIRIR
+#define SARI "\x1b[1;33m"
+#define KRMZ "\x1b[1;31m"
+#define RESET "\x1b[0m"
+#define MAVI "\x1b[1;36m"
+#include "stdlib.h"
+
+
 
 void soru_guncelleme() {
 
@@ -7,6 +14,8 @@ void soru_guncelleme() {
 
   printf("Kaçıncı soruyu güncellemek istersiniz? ");
   scanf("%d", &secimSoru);
+  system("clear||cls");
+  system("clear||cls");
 
 
   if(secimSoru>S){
@@ -21,74 +30,90 @@ void soru_guncelleme() {
 
   soru_goruntuleUp(secimSoru);
 
-  printf("Güncellemek istediğiniz şeyi seçiniz.\n");
-  printf("1- Soru\n");
-  printf("2- A şıkkı\n");
-  printf("3- B şıkkı\n");
-  printf("4- C şıkkı\n");
-  printf("5- D şıkkı\n");
-  printf("6- Doğru şık\n");
+  printf(KRMZ"Güncellemek istediğiniz şeyi seçiniz.\n"RESET);
+  printf(KRMZ"1 ☛"RESET"  Soru\n");
+  printf(KRMZ"2 ☛"RESET"  A şıkkı\n");
+  printf(KRMZ"3 ☛"RESET"  B şıkkı\n");
+  printf(KRMZ"4 ☛"RESET"  C şıkkı\n");
+  printf(KRMZ"5 ☛"RESET"  D şıkkı\n");
+  printf(KRMZ"6 ☛"RESET"  Doğru şık\n");
 
   scanf("%d", &secimGuncelle);
 
+
   if(secimGuncelle==1){
 
-    printf("Güncellenecek soru: %s\n", yeni_soru[secimSoru].soru);
-    printf("Yeni soruyu giriniz:");
+    system("clear||cls");
+    system("clear||cls");
+    printf(SARI"Güncellenecek soru:"RESET" %s\n", yeni_soru[secimSoru].soru);
+    printf(SARI"Yeni soruyu giriniz:"RESET);
     getchar();
     fgets(yeni_soru[secimSoru].soru,120,stdin);
-    printf("---> Güncelleme başarılı.\n");
+    printf(KRMZ"---> Güncelleme başarılı.\n"RESET);
   }
 
   else if(secimGuncelle==2){
 
-    printf("Güncellenecek şık: %s\n", yeni_soru[secimSoru].option_a);
-    printf("Yeni şıkkı giriniz:");
+    system("clear||cls");
+    system("clear||cls");
+    printf(SARI"Güncellenecek şık:"RESET" %s\n", yeni_soru[secimSoru].option_a);
+    printf(SARI"Yeni şıkkı giriniz:"RESET);
     getchar();
     fgets(yeni_soru[secimSoru].option_a,120,stdin);
-    printf("---> Güncelleme başarılı.\n");
+    printf(KRMZ"---> Güncelleme başarılı.\n"RESET);
   }
 
   else if(secimGuncelle==3){
 
-    printf("Güncellenecek şık: %s\n", yeni_soru[secimSoru].option_b);
-    printf("Yeni şıkkı giriniz:");
+    system("clear||cls");
+    system("clear||cls");
+    printf(SARI"Güncellenecek şık:"RESET" %s\n", yeni_soru[secimSoru].option_b);
+    printf(SARI"Yeni şıkkı giriniz:"RESET);
     getchar();
     fgets(yeni_soru[secimSoru].option_b,120,stdin);
-    printf("---> Güncelleme başarılı.\n");
+    printf(KRMZ"---> Güncelleme başarılı.\n"RESET);
   }
 
   else if(secimGuncelle==4){
 
-    printf("Güncellenecek şık: %s\n", yeni_soru[secimSoru].option_c);
-    printf("Yeni şıkkı giriniz:");
+    system("clear||cls");
+    system("clear||cls");
+    printf(SARI"Güncellenecek şık:"RESET" %s\n", yeni_soru[secimSoru].option_c);
+    printf(SARI"Yeni şıkkı giriniz:"RESET);
     getchar();
     fgets(yeni_soru[secimSoru].option_c,120,stdin);
-    printf("---> Güncelleme başarılı.\n");
+    printf(KRMZ"---> Güncelleme başarılı.\n"RESET);
   }
 
   else if(secimGuncelle==5){
 
-    printf("Güncellenecek şık: %s\n", yeni_soru[secimSoru].option_d);
-    printf("Yeni şıkkı giriniz:");
+    system("clear||cls");
+    system("clear||cls");
+    printf(SARI"Güncellenecek şık:"RESET" %s\n", yeni_soru[secimSoru].option_d);
+    printf(SARI"Yeni şıkkı giriniz:"RESET);
     getchar();
     fgets(yeni_soru[secimSoru].option_d,120,stdin);
-    printf("---> Güncelleme başarılı.\n");
+    printf(KRMZ"---> Güncelleme başarılı.\n"RESET);
   }
 
   else if(secimGuncelle==6){
 
-    printf("Doğru şık: %s\n", yeni_soru[secimSoru].correct_option);
-    printf("Yeni doğru şıkkı giriniz:");
+    system("clear||cls");
+    system("clear||cls");
+    printf(SARI"Doğru şık:"RESET" %s\n", yeni_soru[secimSoru].correct_option);
+    printf(SARI"Yeni doğru şıkkı giriniz:"RESET);
     getchar();
     fgets(yeni_soru[secimSoru].correct_option,120,stdin);
-    printf("---> Güncelleme başarılı.\n");
+    printf(KRMZ"---> Güncelleme başarılı.\n"RESET);
   }
 
   else {
-    printf("Geçersiz bir değer girdiniz.\n");
-    printf("Güncelleme başarısız! Ana menüye dönmek için bir tuşa basınız. ");
+    printf(KRMZ"Geçersiz bir değer girdiniz!\n"RESET);
+    printf(KRMZ"Güncelleme başarısız!\n -----> Ana menüye dönmek için bir tuşa basınız...\n "RESET);
     getchar();
+    getchar();
+    system("clear||cls");
+    system("clear||cls");
     ana_menu();
   }
 
@@ -108,6 +133,6 @@ void soru_guncelleme() {
   fclose(fp);
  }
 
- printf("Ana menüye dönmek için bir tuşa basınız..\n");
+ printf(KRMZ"Ana menüye dönmek için bir tuşa basınız..\n"RESET);
  getchar();
 }
