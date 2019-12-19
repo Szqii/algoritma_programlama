@@ -1,3 +1,5 @@
+// ##################LINUX TABANLI SİSTEMLER İÇİN TASARLANMIŞTIR ################# \\
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -9,18 +11,24 @@
 #include "soru_guncelle.h"
 #include "oyun_oyna.h"
 #include "ekran_temizle.h"
+#include "karsilama.h"
+#include "puan_kaydet.h"
+#include "skorlar.h"
 #define SARI "\x1b[1;33m"
 #define KRMZ "\x1b[1;31m"
 #define RESET "\x1b[0m"
 #define MAVI "\x1b[1;36m"
+#define YSL "\x1b[1;32m"
 
 
 int counter = 1;
-
+int puan_sayisi;
+char kullaniciAdi[50];
 
 int main() {
 
-
+	ekran_temizle();
+	karsilama_ekrani();
 	ekran_temizle();
 	ana_menu();
 
@@ -57,7 +65,9 @@ int main() {
 
 			case 4:
 				ekran_temizle();
-				oyun_oyna();
+				printf(SARI"\n\nKullanıcı adınızı"RESET KRMZ" aralarında boşluk bırakmadan "RESET SARI"giriniz: "RESET);
+				scanf("%s",&kullaniciAdi);
+				oyun_oyna(kullaniciAdi);
 				ekran_temizle();
 				ana_menu();
 				break;
@@ -66,6 +76,8 @@ int main() {
 
 			case 5:
 				ekran_temizle();
+		//		puan_sayisi=skor_oku();
+		//		siralama(puan_sayisi);
 				ana_menu();
 				break;
 
@@ -86,10 +98,10 @@ int main() {
 		}
 
 		if (islem_sec==6) {
-			printf("                                        ____________________                                               \n");
+			printf(KRMZ"                                        ____________________                                               \n");
 		  printf("                                       |                    |                                              \n");
 		  printf("=====================================> | PROGRAMDAN ÇIKILDI | <============================================\n");
-		  printf("                                       |____________________|                                              \n");
+		  printf("                                       |____________________|                                              \n"RESET);
 
 			break;
 		}

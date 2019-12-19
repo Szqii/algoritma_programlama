@@ -2,6 +2,7 @@
 #define KRMZ "\x1b[1;31m"
 #define RESET "\x1b[0m"
 #define MAVI "\x1b[1;36m"
+#define YSL "\x1b[1;32m"
 
 void soru_sil()
 {
@@ -29,7 +30,7 @@ void soru_sil()
     printf(MAVI"\n%d. soru:"RESET" %s",i, yeni_soru[i].soru); }
 
 
-		printf(KRMZ"\n----> Silmek istediginiz sorunun numarasini giriniz: "RESET);
+		printf(MAVI"\n----> Silmek istediginiz sorunun numarasini giriniz: "RESET);
 		scanf("%d",&noSilinen);
 
 /*	if(noSilinen>S-1) {
@@ -52,7 +53,7 @@ void soru_sil()
 
 		S--;
 
-		printf(KRMZ"\n\n---> Soru silme başarılı!\nAna menüye dönmek için bir tuşa basınız.\n"RESET);
+		printf(YSL"\n\n---> Soru silme başarılı!\nAna menüye dönmek için bir tuşa basınız.\n"RESET);
 		getchar();
 		getchar();
 	}

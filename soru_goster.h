@@ -3,6 +3,7 @@
 #define KRMZ "\x1b[1;31m"
 #define RESET "\x1b[0m"
 #define MAVI "\x1b[1;36m"
+#define YSL "\x1b[1;32m"
 
 void soru_goruntule() {
 

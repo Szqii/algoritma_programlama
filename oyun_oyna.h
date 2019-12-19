@@ -2,27 +2,21 @@
 #define KRMZ "\x1b[1;31m"
 #define RESET "\x1b[0m"
 #define MAVI "\x1b[1;36m"
-
-struct skor {
-    char nick[50];
-    int puan;
-}yeni_kullanici[50];
+#define YSL "\x1b[1;32m"
 
 int i=0;
 
-void oyun_oyna() {
-
+void oyun_oyna(char kullaniciAdi[]) {
 
 int z;
-char cevap;
 int puan=0;
-int sayac;
+char cevap;
 
-
-for(sayac=0; sayac<5; sayac++) {
+for(int sayac=0; sayac<5; sayac++) {
 
   srand(time(NULL));
   z= 1+(rand()%S-1);
+
 
   printf("\n%d. soru: %s",sayac+1,yeni_soru[z].soru);
   printf("A- %s",yeni_soru[z].option_a);
@@ -35,7 +29,7 @@ for(sayac=0; sayac<5; sayac++) {
 
   if(cevap=='A') {
     if(!strcmp(yeni_soru[z].correct_option,yeni_soru[z].option_a)) {
-    printf(MAVI"Doğru cevap! "RESET);
+    printf(YSL"Doğru cevap! "RESET);
     puan ++;
   }
   	else{
@@ -44,7 +38,7 @@ for(sayac=0; sayac<5; sayac++) {
   }
   else if(cevap=='B') {
     if(!strcmp(yeni_soru[z].correct_option,yeni_soru[z].option_b)) {
-    printf(MAVI"Doğru cevap! "RESET);
+    printf(YSL"Doğru cevap! "RESET);
     puan ++;
   }
   	else{
@@ -53,7 +47,7 @@ for(sayac=0; sayac<5; sayac++) {
   }
   else if(cevap=='C') {
     if(!strcmp(yeni_soru[z].correct_option,yeni_soru[z].option_c)) {
-    printf(MAVI"Doğru cevap! "RESET);
+    printf(YSL"Doğru cevap! "RESET);
     puan ++;
   }
   	else{
@@ -62,23 +56,30 @@ for(sayac=0; sayac<5; sayac++) {
   }
   else if(cevap=='D') {
     if(!strcmp(yeni_soru[z].correct_option,yeni_soru[z].option_d)) {
-    printf(MAVI"Doğru cevap! "RESET);
+    printf(YSL"Doğru cevap! "RESET);
     puan ++;
   }
   	else{
   		printf(KRMZ"Geçersiz bir değer girdiniz. Cevap yanlış sayılacaktır."RESET);
   	}
   }
+  printf("%d\n",puan);
 }
-  getchar();
-  FILE *f;
-  f = fopen("skorlar.txt","a");
-  printf("Kullanıcı adınızı giriniz :\n");
-  fgets(yeni_kullanici[i].nick,50,stdin);
+// Kullanıcı adını ve puanı dosyaya yazma işlemi
 
-  yeni_kullanici[i].puan = puan;
-  fprintf(f,"\t%d\t%s\n",yeni_kullanici[i].nick, yeni_kullanici[i].puan);
+    FILE *f;
+    f = fopen("Skorlar.txt","a");
+
+  printf(SARI"Tebrikler %s!\n"RESET,kullaniciAdi);
+  printf(SARI"Puanınız %d.\n"RESET,puan);
+
+
+  fprintf(f,"%s: %d\n",kullaniciAdi,puan);
   fclose(f);
+
   i++;
 
+  printf(MAVI"Ana menüye dönmek için bir tuşa basınız..\n"RESET);
+  getchar();
+  getchar();
 }

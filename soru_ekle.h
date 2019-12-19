@@ -3,6 +3,7 @@
 #define KRMZ "\x1b[1;31m"
 #define RESET "\x1b[0m"
 #define MAVI "\x1b[1;36m"
+#define YSL "\x1b[1;32m"
 
 int S=1;// Soru sayısını tutan değişken
 struct sorum{
@@ -59,7 +60,7 @@ void soru_ekle() {
 
   yeni_soru[S].id = counter;
   counter++;
-  printf(KRMZ"\n-------> %d. soru başarıyla eklendi!\nAna menüye dönmek için bir tuşa basınız.\n"RESET, yeni_soru[S].id);
+  printf(YSL"\n-------> %d. soru başarıyla eklendi!\nAna menüye dönmek için bir tuşa basınız.\n"RESET, yeni_soru[S].id);
   S++;
   getchar();
 

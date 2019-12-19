@@ -3,6 +3,7 @@
 #define KRMZ "\x1b[1;31m"
 #define RESET "\x1b[0m"
 #define MAVI "\x1b[1;36m"
+#define YSL "\x1b[1;32m"
 #include "stdlib.h"
 
 
@@ -30,13 +31,13 @@ void soru_guncelleme() {
 
   soru_goruntuleUp(secimSoru);
 
-  printf(KRMZ"Güncellemek istediğiniz şeyi seçiniz.\n"RESET);
-  printf(KRMZ"1 ☛"RESET"  Soru\n");
-  printf(KRMZ"2 ☛"RESET"  A şıkkı\n");
-  printf(KRMZ"3 ☛"RESET"  B şıkkı\n");
-  printf(KRMZ"4 ☛"RESET"  C şıkkı\n");
-  printf(KRMZ"5 ☛"RESET"  D şıkkı\n");
-  printf(KRMZ"6 ☛"RESET"  Doğru şık\n");
+  printf(MAVI"Güncellemek istediğiniz şeyi seçiniz.\n"RESET);
+  printf(MAVI"1 ☛"RESET"  Soru\n");
+  printf(MAVI"2 ☛"RESET"  A şıkkı\n");
+  printf(MAVI"3 ☛"RESET"  B şıkkı\n");
+  printf(MAVI"4 ☛"RESET"  C şıkkı\n");
+  printf(MAVI"5 ☛"RESET"  D şıkkı\n");
+  printf(MAVI"6 ☛"RESET"  Doğru şık\n");
 
   scanf("%d", &secimGuncelle);
 
@@ -49,7 +50,8 @@ void soru_guncelleme() {
     printf(SARI"Yeni soruyu giriniz:"RESET);
     getchar();
     fgets(yeni_soru[secimSoru].soru,120,stdin);
-    printf(KRMZ"---> Güncelleme başarılı.\n"RESET);
+    printf(YSL"\n---> Güncelleme başarılı.\n"RESET);
+    printf(MAVI"Güncel soru:"RESET" %s\n",yeni_soru[secimSoru].soru);
   }
 
   else if(secimGuncelle==2){
@@ -60,7 +62,8 @@ void soru_guncelleme() {
     printf(SARI"Yeni şıkkı giriniz:"RESET);
     getchar();
     fgets(yeni_soru[secimSoru].option_a,120,stdin);
-    printf(KRMZ"---> Güncelleme başarılı.\n"RESET);
+    printf(YSL"\n---> Güncelleme başarılı.\n"RESET);
+    printf(MAVI"Güncel A şıkkı:"RESET" %s\n",yeni_soru[secimSoru].option_a);
   }
 
   else if(secimGuncelle==3){
@@ -71,7 +74,8 @@ void soru_guncelleme() {
     printf(SARI"Yeni şıkkı giriniz:"RESET);
     getchar();
     fgets(yeni_soru[secimSoru].option_b,120,stdin);
-    printf(KRMZ"---> Güncelleme başarılı.\n"RESET);
+    printf(YSL"\n---> Güncelleme başarılı.\n"RESET);
+    printf(MAVI"Güncel B şıkkı:"RESET" %s\n",yeni_soru[secimSoru].option_b);
   }
 
   else if(secimGuncelle==4){
@@ -82,8 +86,9 @@ void soru_guncelleme() {
     printf(SARI"Yeni şıkkı giriniz:"RESET);
     getchar();
     fgets(yeni_soru[secimSoru].option_c,120,stdin);
-    printf(KRMZ"---> Güncelleme başarılı.\n"RESET);
-  }
+    printf(YSL"\n---> Güncelleme başarılı.\n"RESET);
+    printf(MAVI"Güncel C şıkkı:"RESET" %s\n",yeni_soru[secimSoru].option_c);
+    }
 
   else if(secimGuncelle==5){
 
@@ -93,18 +98,20 @@ void soru_guncelleme() {
     printf(SARI"Yeni şıkkı giriniz:"RESET);
     getchar();
     fgets(yeni_soru[secimSoru].option_d,120,stdin);
-    printf(KRMZ"---> Güncelleme başarılı.\n"RESET);
-  }
+    printf(YSL"\n---> Güncelleme başarılı.\n"RESET);
+    printf(MAVI"Güncel D şıkkı:"RESET" %s\n",yeni_soru[secimSoru].option_d);
+    }
 
   else if(secimGuncelle==6){
 
     system("clear||cls");
     system("clear||cls");
-    printf(SARI"Doğru şık:"RESET" %s\n", yeni_soru[secimSoru].correct_option);
+    printf(SARI"Doğru cevap:"RESET" %s\n", yeni_soru[secimSoru].correct_option);
     printf(SARI"Yeni doğru şıkkı giriniz:"RESET);
     getchar();
     fgets(yeni_soru[secimSoru].correct_option,120,stdin);
-    printf(KRMZ"---> Güncelleme başarılı.\n"RESET);
+    printf(YSL"\n---> Güncelleme başarılı.\n"RESET);
+    printf(MAVI"Güncel doğru cevap:"RESET" %s\n",yeni_soru[secimSoru].correct_option);
   }
 
   else {
